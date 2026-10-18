@@ -6,9 +6,25 @@ public class MortgageCalculator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Mortgage Calculator");
+        System.out.println("Current Rates: 7.40% for 30 years, 6.71% for 15 years");
+        System.out.println("Enter numbers without commas.");
+        System.out.println();
 
+        System.out.println("Loan amount ($): ");
+        double principal = scanner.nextDouble();
 
+        System.out.print("Annual interest rate: ");
+        double annualRatePercent = scanner.nextDouble();
 
+        System.out.print("Loan length (years): ");
+        double years = scanner.nextDouble();
+
+        double monthlyPayment = calculateMonthlyPayment(principal, annualRatePercent,years);
+        double totalInterest = calculateTotalInterest(monthlyPayment, principal, years);
+
+        System.out.println();
+        System.out.printf();
 
 
 
@@ -16,8 +32,6 @@ public class MortgageCalculator {
 
     }
 }
-
-
 
 
 // Calculator 1: A mortgage calculator - it is used to calculate what the monthly payment for a loan would be (minus any insurance or taxes), and the total interest paid over the life of the loan.
