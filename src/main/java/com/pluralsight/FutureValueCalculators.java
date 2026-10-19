@@ -15,10 +15,10 @@ public class FutureValueCalculators {
         System.out.print(" Deposit amount ($): ");
         double deposit = scanner.nextDouble();
 
-        System.out.print("Annual interest rate (e.g. 3.6816):");
+        System.out.print("Annual interest rate (e.g. 3.6816): ");
         double annualRatePercentage = scanner.nextDouble();
 
-        System.out.print("Number of years until maturity:");
+        System.out.print("Number of years until maturity: ");
         double years = scanner.nextDouble();
 
         double futureValue = calculateFutureValue(deposit, annualRatePercentage, years);
@@ -33,8 +33,10 @@ public class FutureValueCalculators {
 
     public static double calculateFutureValue(double deposit, double annualRatePercentage, double years) {
         double daysPerYear = 365;
-        deposit d
+        double dailyRate = annualRatePercentage / 100 /daysPerYear;
+        double totalDays = daysPerYear * years;
 
+        return deposit * Math.pow(1+ dailyRate, totalDays);
 
     }
 }

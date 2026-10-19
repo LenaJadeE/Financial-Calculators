@@ -20,16 +20,37 @@ public class MortgageCalculator {
         System.out.print("Loan length (years): ");
         double years = scanner.nextDouble();
 
-        double monthlyPayment = calculateMonthlyPayment(principal, annualRatePercent,years);
+        double monthlyPayment = calculateMonthlyPayment(principal, annualRatePercent, years);
         double totalInterest = calculateTotalInterest(monthlyPayment, principal, years);
 
         System.out.println();
-        System.out.printf();
+        System.out.printf("Expected monthly payment: $%.2f%n", monthlyPayment);
+        System.out.printf("Total interest paid: $%.2f%n", totalInterest);
+        System.out.println("(Principal and interest, no taxes or insuance.)");
 
+        scanner.close();
 
+    }
 
+    public static double calculateMonthlyPayment(double principal, double annualRatePercent, double years) {
+        double monthlyRate = annualRatePercent / 100 / 12;
+        double numberOfPayments = years * 12;
+        double monthlyPayment;
 
+        if (monthlyRate == 0) {
+            monthlyPayment = principal / numberOfPayments;
+        } else {
+            double growth = Math.pow(1 + monthlyRate, numberOfPayments);
+            monthlyPayment = principal * (monthlyRate * growth) / (growth - 1);
+        }
 
+        return monthlyPayment;
+    }
+
+     public static double calculateTotalInterest(double monthlyPayment, double principal, double years) {
+        double numberOfpayments = years * 12;
+
+        return (monthlyPayment * numberOfpayments) - principal;
     }
 }
 
