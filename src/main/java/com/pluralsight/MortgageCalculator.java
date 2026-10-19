@@ -48,9 +48,9 @@ public class MortgageCalculator {
     }
 
      public static double calculateTotalInterest(double monthlyPayment, double principal, double years) {
-        double numberOfpayments = years * 12;
+        double numberOfPayments = years * 12;
 
-        return (monthlyPayment * numberOfpayments) - principal;
+        return (monthlyPayment * numberOfPayments) - principal;
     }
 }
 

@@ -30,7 +30,17 @@ public class PresentValueCalculator {
     }
 
     public static double calculatePresentValue(double monthlyPayout,double annualRatePercent, double years) {
+        double monthlyRate = annualRatePercent / 100 /12;
+        double numberOfPayments = years * 12;
+        double presentValue;
 
+        if (monthlyRate == 0) {
+            presentValue = monthlyPayout * numberOfPayments;
+        } else {
+            presentValue = monthlyPayout * (1 - (1/ Math.pow(1+ monthlyRate, numberOfPayments))) / monthlyRate;
+        }
+
+        return presentValue;
     }
 }
 

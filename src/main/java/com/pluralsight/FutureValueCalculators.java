@@ -12,7 +12,7 @@ public class FutureValueCalculators {
         System.out.println("Enter numbers without commas.");
         System.out.println();
 
-        System.out.print(" Deposit amount ($): ");
+        System.out.print("Deposit amount ($): ");
         double deposit = scanner.nextDouble();
 
         System.out.print("Annual interest rate (e.g. 3.6816): ");
