@@ -25,10 +25,15 @@ public class FutureValueCalculators {
         double interestEarned = futureValue - deposit;
 
         System.out.println();
-        System.out.printf();
+        System.out.printf("Ending balance: $%.2f%n", futureValue);
+        System.out.printf("Interest earned: $%.2f%n", interestEarned);
 
+        scanner.close();
+    }
 
-
+    public static double calculateFutureValue(double deposit, double annualRatePercentage, double years) {
+        double daysPerYear = 365;
+        deposit d
 
 
     }
