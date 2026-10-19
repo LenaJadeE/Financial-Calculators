@@ -6,7 +6,11 @@ public class PresentValueCalculator {
     public static void main(String[] args) {
        Scanner scanner = new Scanner(System.in);
 
-
+        System.out.println("Annuity Present Value Calculator");
+        System.out.println("Example: $2,195 per month, 5.00% return, 20 years");
+        System.out.println("5.00% is the low end of thr rates top carriers paid on fixed annuities in 2026.");
+        System.out.println("Enter numbers without commas.");
+        System.out.println();
 
 
     }
