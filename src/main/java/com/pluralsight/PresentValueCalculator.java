@@ -12,6 +12,24 @@ public class PresentValueCalculator {
         System.out.println("Enter numbers without commas.");
         System.out.println();
 
+        System.out.print("Monthly payout ($): ");
+        double monthlyPayout = scanner.nextDouble();
+
+        System.out.print("Expected annual interest rate (e.g. 5.00): ");
+        double annualRatePercent = scanner.nextDouble();
+
+        System.out.print("Number of years the annuity pays out: ");
+        double years = scanner.nextDouble();
+
+        double presentValue = calculatePresentValue(monthlyPayout, annualRatePercent,years);
+
+        System.out.println();
+        System.out.printf("You would need to invest $%.2f today.%n", presentValue);
+
+        scanner.close();
+    }
+
+    public static double calculatePresentValue(double monthlyPayout,double annualRatePercent, double years) {
 
     }
 }
